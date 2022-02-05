@@ -17,7 +17,9 @@ function init(bundle, parent, options = {}) {
   );
 
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('pan_1.jpg'));
+  const params = new URLSearchParams(window.location.search);
+  const url = params.get("url");
+  r360.compositor.setBackground(url);
 }
 
 window.React360 = {init};
